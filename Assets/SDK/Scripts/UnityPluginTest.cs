@@ -63,10 +63,8 @@ public class UnityPluginTest : MonoBehaviour
     }
 
 
-    /// <summary>
-    /// tmpObj[1] = "AndroidLog";
-    /// 요기서 설정한 메소드명입니다.
-    /// </summary>
+    // tmpObj[1] = "AndroidLog";
+    // 요기서 설정한 메소드명입니다.
     public void AndroidLog(string str)
     {
         Debug.Log(str);

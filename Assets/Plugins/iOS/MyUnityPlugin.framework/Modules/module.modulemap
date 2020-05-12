@@ -1,0 +1,11 @@
+framework module MyUnityPlugin {
+  umbrella header "MyUnityPlugin.h"
+
+  export *
+  module * { export * }
+}
+
+module MyUnityPlugin.Swift {
+    header "MyUnityPlugin-Swift.h"
+    requires objc
+}

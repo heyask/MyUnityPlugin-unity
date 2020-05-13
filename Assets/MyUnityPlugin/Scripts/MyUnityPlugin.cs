@@ -102,14 +102,17 @@ namespace MyUnityPlugin.Plugins.SDK
 
         void __fromnative_OnLoad()
         {
+            Debug.Log("MyUnityPlugin: __fromnative_OnLoad");
             (mImpl as MyUnityPluginiOSImpl).__fromnative_OnLoad();
         }
         void __fromnative_OnCallTestFunc1(string _str)
         {
+            Debug.Log("MyUnityPlugin: __fromnative_OnCallTestFunc1");
             (mImpl as MyUnityPluginiOSImpl).__fromnative_OnCallTestFunc1(_str);
         }
         void __fromnative_OnCallTestFunc2(string _num)
         {
+            Debug.Log("MyUnityPlugin: __fromnative_OnCallTestFunc2");
             (mImpl as MyUnityPluginiOSImpl).__fromnative_OnCallTestFunc2(_num);
         }
 

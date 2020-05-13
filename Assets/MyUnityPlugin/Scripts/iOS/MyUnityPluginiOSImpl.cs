@@ -38,16 +38,19 @@ namespace MyUnityPlugin.Plugins.SDK.Impl
         */
         public void __fromnative_OnLoad()
         {
+            Debug.Log("MyUnityPluginiOSImpl: __fromnative_OnLoad");
             if (callbackInterface == null) { return; }
             callbackInterface.OnLoad();
         }
         public void __fromnative_OnCallTestFunc1(string _str)
         {
+            Debug.Log("MyUnityPluginiOSImpl: __fromnative_OnCallTestFunc1");
             if (callbackInterface == null) { return; }
             callbackInterface.OnCallTestFunc1(_str);
         }
         public void __fromnative_OnCallTestFunc2(string _num)
         {
+            Debug.Log("MyUnityPluginiOSImpl: __fromnative_OnCallTestFunc2");
             if (callbackInterface == null) { return; }
             callbackInterface.OnCallTestFunc2(_num);
         }

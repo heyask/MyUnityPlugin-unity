@@ -31,17 +31,17 @@ namespace MyUnityPlugin.Plugins.SDK
         {
             public void OnLoad()
             {
-                Debug.Log("MyUnityPlugin Callback Test: OnLoad");
+                Debug.Log("MyUnityPluginSample: MyUnityPlugin Callback Test: OnLoad");
             }
 
             public void OnCallTestFunc1(string _str)
             {
-                Debug.Log("MyUnityPlugin Callback Test: OnCallTestFunc1");
+                Debug.Log("MyUnityPluginSample: MyUnityPlugin Callback Test: OnCallTestFunc1");
             }
 
             public void OnCallTestFunc2(string _num)
             {
-                Debug.Log("MyUnityPlugin Callback Test: OnCallTestFunc2");
+                Debug.Log("MyUnityPluginSample: MyUnityPlugin Callback Test: OnCallTestFunc2");
             }
         }
     }

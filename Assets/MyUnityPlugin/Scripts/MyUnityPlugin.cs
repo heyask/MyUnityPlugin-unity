@@ -10,15 +10,15 @@ namespace MyUnityPlugin.Plugins.SDK
     public interface IMyUnityPluginCallback
     {
         void OnLoad();
-        void OnCallTestFunc1(string _str);
-        void OnCallTestFunc2(int _num);
+        void OnCallTestFunc1(string str);
+        void OnCallTestFunc2(int num);
     }
 
     internal interface IMyUnityPluginImpl
     {
         bool Initialize();
-        string TestFunc1(string _str);
-        int TestFunc2(int _num);
+        string TestFunc1(string str);
+        int TestFunc2(int num);
         void SetCallbackInterface(IMyUnityPluginCallback callback);
     }
 
@@ -64,21 +64,21 @@ namespace MyUnityPlugin.Plugins.SDK
         /*
         Native Functions
         */
-        public string TestFunc1(string _str)
+        public string TestFunc1(string str)
         {
             if (mImpl != null)
             {
-                return mImpl.TestFunc1(_str);
+                return mImpl.TestFunc1(str);
             }
 
             return null;
         }
 
-        public int TestFunc2(int _num)
+        public int TestFunc2(int num)
         {
             if (mImpl != null)
             {
-                return mImpl.TestFunc2(_num);
+                return mImpl.TestFunc2(num);
             }
 
             return -1;
@@ -105,15 +105,15 @@ namespace MyUnityPlugin.Plugins.SDK
             Debug.Log("MyUnityPlugin: __fromnative_OnLoad");
             (mImpl as MyUnityPluginiOSImpl).__fromnative_OnLoad();
         }
-        void __fromnative_OnCallTestFunc1(string _str)
+        void __fromnative_OnCallTestFunc1(string str)
         {
             Debug.Log("MyUnityPlugin: __fromnative_OnCallTestFunc1");
-            (mImpl as MyUnityPluginiOSImpl).__fromnative_OnCallTestFunc1(_str);
+            (mImpl as MyUnityPluginiOSImpl).__fromnative_OnCallTestFunc1(str);
         }
-        void __fromnative_OnCallTestFunc2(string _num)
+        void __fromnative_OnCallTestFunc2(string num)
         {
             Debug.Log("MyUnityPlugin: __fromnative_OnCallTestFunc2");
-            (mImpl as MyUnityPluginiOSImpl).__fromnative_OnCallTestFunc2(_num);
+            (mImpl as MyUnityPluginiOSImpl).__fromnative_OnCallTestFunc2(num);
         }
 
         #endregion

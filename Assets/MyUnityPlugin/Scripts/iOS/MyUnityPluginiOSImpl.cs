@@ -20,14 +20,14 @@ namespace MyUnityPlugin.Plugins.SDK.Impl
         /*
         Native Functions
         */
-        public string TestFunc1(string _str)
+        public string TestFunc1(string str)
         {
-            return MyUnityPlugin.__IOS_TestFunc1(_str);
+            return MyUnityPlugin.__IOS_TestFunc1(str);
         }
 
-        public int TestFunc2(int _num)
+        public int TestFunc2(int num)
         {
-            return MyUnityPlugin.__IOS_TestFunc2(_num);
+            return MyUnityPlugin.__IOS_TestFunc2(num);
         }
 
         public void SetCallbackInterface(IMyUnityPluginCallback callbackInterface)
@@ -44,19 +44,19 @@ namespace MyUnityPlugin.Plugins.SDK.Impl
             if (callbackInterface == null) { return; }
             callbackInterface.OnLoad();
         }
-        public void __fromnative_OnCallTestFunc1(string _str)
+        public void __fromnative_OnCallTestFunc1(string str)
         {
             Debug.Log("MyUnityPluginiOSImpl: __fromnative_OnCallTestFunc1");
             if (callbackInterface == null) { return; }
-            callbackInterface.OnCallTestFunc1(_str);
+            callbackInterface.OnCallTestFunc1(str);
         }
-        public void __fromnative_OnCallTestFunc2(string _num)
+        public void __fromnative_OnCallTestFunc2(string num)
         {
             Debug.Log("MyUnityPluginiOSImpl: __fromnative_OnCallTestFunc2");
             if (callbackInterface == null) { return; }
             try {
-                int num = int.Parse(_num);
-                callbackInterface.OnCallTestFunc2(num);
+                int parsedNum = int.Parse(num);
+                callbackInterface.OnCallTestFunc2(parsedNum);
             } catch(FormatException e) {
                 throw new System.FormatException(e, "original");
             } catch(OverflowException e) {

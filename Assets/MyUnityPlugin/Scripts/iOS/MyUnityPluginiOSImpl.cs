@@ -10,9 +10,11 @@ namespace MyUnityPlugin.Plugins.SDK.Impl
     {
         IMyUnityPluginCallback callbackInterface;
 
-        public void Initialize()
+        public bool Initialize()
         {
             MyUnityPlugin.__IOS_Initialize();
+            // TODO
+            return true;
         }
 
         /*
@@ -52,7 +54,14 @@ namespace MyUnityPlugin.Plugins.SDK.Impl
         {
             Debug.Log("MyUnityPluginiOSImpl: __fromnative_OnCallTestFunc2");
             if (callbackInterface == null) { return; }
-            callbackInterface.OnCallTestFunc2(_num);
+            try {
+                int num = int.Parse(_num);
+                callbackInterface.OnCallTestFunc2(num);
+            } catch(FormatException e) {
+                throw new System.FormatException(e, "original");
+            } catch(OverflowException e) {
+                throw new System.OverflowException(e, "original");
+            }
         }
     }
 #endif

@@ -27,6 +27,11 @@ namespace MyUnityPlugin.Plugins.SDK
             MyUnityPlugin.Instance.TestFunc2(999);
         }
 
+        public void DebugLog(string str)
+        {
+            Debug.Log(str);
+        }
+
         private class MyUnityPluginCallbackReceiver : IMyUnityPluginCallback
         {
             public void OnLoad()
@@ -39,7 +44,7 @@ namespace MyUnityPlugin.Plugins.SDK
                 Debug.Log("MyUnityPluginSample: MyUnityPlugin Callback Test: OnCallTestFunc1");
             }
 
-            public void OnCallTestFunc2(string _num)
+            public void OnCallTestFunc2(int _num)
             {
                 Debug.Log("MyUnityPluginSample: MyUnityPlugin Callback Test: OnCallTestFunc2");
             }

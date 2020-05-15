@@ -11,12 +11,12 @@ namespace MyUnityPlugin.Plugins.SDK
     {
         void OnLoad();
         void OnCallTestFunc1(string _str);
-        void OnCallTestFunc2(string _num);
+        void OnCallTestFunc2(int _num);
     }
 
     internal interface IMyUnityPluginImpl
     {
-        void Initialize();
+        bool Initialize();
         string TestFunc1(string _str);
         int TestFunc2(int _num);
         void SetCallbackInterface(IMyUnityPluginCallback callback);
@@ -54,7 +54,7 @@ namespace MyUnityPlugin.Plugins.SDK
         private MyUnityPlugin()
         {
 #if UNITY_ANDROID
-		    mImpl = new GarlicWebviewAndroidImpl();
+            mImpl = new MyUnityPluginAndroidImpl();
 #elif UNITY_IOS
             mImpl = new MyUnityPluginiOSImpl();
 #endif

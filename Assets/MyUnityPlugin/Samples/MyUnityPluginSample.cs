@@ -27,11 +27,6 @@ namespace MyUnityPlugin.Plugins.SDK
             MyUnityPlugin.Instance.TestFunc2(999);
         }
 
-        public void DebugLog(string str)
-        {
-            Debug.Log(str);
-        }
-
         private class MyUnityPluginCallbackReceiver : IMyUnityPluginCallback
         {
             public void OnLoad()

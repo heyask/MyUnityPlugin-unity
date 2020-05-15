@@ -89,6 +89,11 @@ namespace MyUnityPlugin.Plugins.SDK
             mImpl.SetCallbackInterface(callbackInterface);
         }
 
+        public void DebugLog(string str)
+        {
+            Debug.Log(str);
+        }
+
 #if UNITY_IOS
         [DllImport("__Internal")]
         internal static extern void __IOS_Initialize();

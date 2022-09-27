@@ -4,7 +4,7 @@
 
 ## 가이드
 
-> 이 프로젝트는 아래 블로그 글에서 다루는 예제 프로젝트입니다.
+> 아래 블로그 글을 참고해주세요
 
 [유니티용 Plugin 만들기 : iOS편 (Swift)](http://heyask.github.io/develop/2020-05-06-Unity-plugin-iOS-swift)
 
